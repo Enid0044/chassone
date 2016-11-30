@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        #wrap{
+            width:800px;
+            height:500px;
+            margin:100px auto;
+            /*border:10px solid #ccc;*/
+            position:relative;
+            overflow: hidden;
+        }
+        .list1{
+            position:absolute;
+            top:0;
+            left:0;
+
+        }
+        .list2{
+            position:absolute;
+            top:0;
+            left:0;
+            width:200%;
+        }
+        .list2 li{
+            float: left;
+        }
+        img{
+            vertical-align: top;
+        }
+        </style>
+    </head>
+    <script src="js/miaov.js"></script>
+    <script>
+        window.onload=function(){
+            var wrap=document.getElementById("wrap");
+            var ul=document.getElementsByTagName("ul")[0];
+            var li=document.getElementsByTagName("li");
+            var img=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg"];
+            var n=0;
+            var imgW=css(wrap,"width");
+            var imgH=css(wrap,"height");
+            console.log(imgW);
+            document.onkeydown=function(e){
+                var e=e||event;
+                if(e.keyCode==39){
+                    ul.style.top=0;
+                    ul.className="list2";
+                    var m=n+1;
+                    if(m>=img.length){
+                        m=0;
+                    }
+                    console.log(n);
+                    css(ul,"left",0)
+                    li[0].children[0].src=img[n];
+                    li[1].children[0].src=img[m];
+                    mTween(ul,{left:-imgW},400,"linear");
+                    n=m;
+
+                }
+                if(e.keyCode==37){
+
+                    ul.className="list2";
+                    ul.style.top=0;
+                    var m=n-1;
+                    if(m<0){
+                        m=img.length-1;
+                    }
+                    console.log(m)
+                    css(ul,"left",-imgW)
+                    li[1].children[0].src=img[n];
+                    li[0].children[0].src=img[m];
+                    mTween(ul,{left:0},400,"linear");
+                    n=m;
+                }
+                if(e.keyCode==38){
+                    ul.className="list1";
+                    ul.style.left=0;
+                     var m=n-1;
+                    if(m<0){
+                        m=img.length-1;
+                    }
+                    console.log(m)
+                    css(ul,"top",-imgH)
+                    li[1].children[0].src=img[n];
+                    li[0].children[0].src=img[m];
+                    mTween(ul,{top:0},400,"linear");
+                    n=m;
+                }
+                if(e.keyCode==40){
+                    ul.className="list1";
+                    ul.style.left=0;
+                     var m=n+1;
+                    if(m>=img.length){
+                        m=0;
+                    }
+                    console.log(n);
+                    css(ul,"top",0)
+                    li[0].children[0].src=img[n];
+                    li[1].children[0].src=img[m];
+                    mTween(ul,{top:-imgH},400,"linear");
+                    n=m;
+                }
+            }
+
+        }
+    </script>
+    <body style="background:#000;">
+    <section id="wrap">
+        <ul >
+            <li><img src="img/1.jpg"></li>
+            <li><img src="img/2.jpg"></li>
+        </ul>
+    </section>
+    </body>
+</html>
