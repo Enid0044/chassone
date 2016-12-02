@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+     #wrap{
+        width:600px;
+        margin:100px auto;
+        position:relative;
+     }
+     #wrap a{
+        position:absolute;
+        width:50px;
+        height:50px;
+        font:40px/50px "微软雅黑";
+        text-decoration:none;
+        background:#000;
+        text-align: center;
+        color:#fff;
+
+     }
+     #wrap a:nth-of-type(1){
+        top:335px;
+        left:-50px;
+        z-index: 9;
+
+     }
+     #wrap a:nth-of-type(2){
+        top:335px;
+        right:-50px;
+        z-index: 9;
+     }
+     #imgs{
+        width:100%;
+        position:relative;
+
+     }
+     #imgs img{
+        position:absolute;
+
+     }
+     #imgs img:nth-of-type(4){
+        width:500px;
+        top:0px;
+        left:50px;
+        opacity:1;
+        z-index: 5;
+     }
+      #imgs img:nth-of-type(3){
+        width:400px;
+        top:50px;
+        left:-80px;
+        opacity:.8;
+        z-index: 4;
+     }
+      #imgs img:nth-of-type(2){
+        width:350px;
+        top:80px;
+        left:-200px;
+        opacity:.1;
+        z-index: 3;
+     }
+      #imgs img:nth-of-type(1){
+        width:100px;
+        top:-80px;
+        left:-100px;
+        opacity:0;
+        z-index: 3;
+     }
+      #imgs img:nth-of-type(5){
+        width:400px;
+        top:50px;
+        right:-80px;
+        opacity:.8;
+        z-index: 4;
+     }
+       #imgs img:nth-of-type(6){
+        width:350px;
+        top:80px;
+        right:-200px;
+        opacity:.1;
+        z-index: 3;
+     }
+      #imgs img:nth-of-type(7){
+        width:100px;
+        top:-80px;
+        right:-100px;
+        opacity:0;
+        z-index: 3;
+     }
+      #imgs img:nth-of-type(8){
+        width:100px;
+        top:-80px;
+        right:-100px;
+        opacity:0;
+        z-index: 3;
+     }
+    </style>
+    <script src="js/miaov.js"></script>
+    <script>
+        window.onload=function(){
+            var img=document.getElementsByTagName("img");
+            var arr=[];
+            for(var i=0; i<img.length; i++){
+                var obj={};
+                obj.width=css(img[i],"width");
+                obj.top=css(img[i],"top");
+                obj.left=css(img[i],"left");
+                obj.right=css(img[i],"right");
+                obj.opacity=css(img[i],"opacity");
+                obj.zIndex=css(img[i],"zIndex");
+                arr.push(obj);
+            }
+            var btn=document.getElementsByTagName("a");
+            btn[0].onclick=function(){
+                arr.push(arr.shift());
+                set();
+            }
+            btn[1].onclick=function(){
+                arr.unshift(arr.pop());
+                set();
+            }
+            function set(){
+                for(var i=0; i<img.length; i++){
+                    mTween(img[i],{top:arr[i].top,left:arr[i].left,width:arr[i].width,right:arr[i].width,opacity:arr[i].opacity},400,"linear");
+                    img[i].style.zIndex=arr[i].zIndex;
+                }
+            }
+        }
+    </script>
+    <body>
+    <section id="wrap">
+       <a href="javasript:;"><</a>
+       <a href="javasript:;">></a>
+        <div id="imgs">
+            <img src="img5/1.jpg">
+             <img src="img5/2.jpg">
+            <img src="img5/3.jpg">
+            <img src="img5/4.jpg">
+            <img src="img5/5.jpg">
+            <img src="img5/6.jpg">
+            <img src="img5/7.jpg">
+            <img src="img5/8.jpg">
+        </div>
+    </section>
+    </body>
+</html>
