@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style>
+			#canvas{
+				display: block;
+				margin:30px auto;
+
+			}
+		</style>
+
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+	</body>
+	<script>
+			(function(d){
+				var canvas=d.getElementById("canvas");
+				var cxt=canvas.getContext("2d");
+				var w=cxt.canvas.width;
+				var h=cxt.canvas.height;
+				var r=w/2;
+				setInterval(timer, 50);
+				function timer(){
+					var now=new Date();
+					var s=now.getSeconds();
+					var m=now.getMinutes()+s/60;
+					var h=now.getHours()+m/60;
+					console.log(m);
+					cxt.clearRect(0, 0, cxt.canvas.width, cxt.canvas.height);
+					drawCir(cxt);
+					drawNum(cxt);
+					drawPoint(cxt);
+					drawhour(cxt,h);
+					drawmin(cxt,m);
+					drawsec(cxt,s);
+					drawcenter(cxt);
+				}
+				//绘制最外面的圆
+				function drawCir(cxt){
+					cxt.save(); //保存
+					cxt.translate(r,r); //位移
+					cxt.beginPath(); //开始
+					cxt.lineWidth=10; //线宽
+					cxt.arc(0,0,r-5,0,2*Math.PI); //圆的路径
+					cxt.stroke(); //线条颜色
+					cxt.restore();
+				};
+				//绘制数字
+				function drawNum(cxt){
+					var arr=[3,4,5,6,7,8,9,10,11,12,1,2];
+					cxt.save();
+					cxt.translate(r,r);
+					cxt.font="18px Arial"; //字体大小
+					cxt.textAlign="center";  //水平居中
+					cxt.textBaseline="middle"; //垂直居中
+					arr.forEach (function(item,i){
+						var rad=2*Math.PI/12*i;
+						var x=Math.cos(rad)*(r-34),
+						    y=Math.sin(rad)*(r-34);
+						cxt.fillText(item, x, y);
+
+					});
+					cxt.restore();
+				}
+				//绘制刻度；
+				function drawPoint(cxt){
+					cxt.save();
+					cxt.translate(r,r);
+					for( var i=0; i<60; i++){
+						var rad=2*Math.PI/60*i;
+						var x=Math.cos(rad)*(r-18);
+						var y=Math.sin(rad)*(r-18);
+						cxt.beginPath();
+						if(i%5==0){
+							cxt.fillStyle="#000";
+						}else{
+							cxt.fillStyle="#ccc";
+						}
+						cxt.arc(x,y,2,0,2*Math.PI);
+						cxt.fill();
+					}
+					cxt.restore();
+				}
+				//绘制时针
+
+				function drawhour(cxt,hour){
+					var rad=2*Math.PI/12*hour;
+					cxt.save();
+					cxt.translate(r,r);
+					cxt.rotate(rad);  //旋转 接受的是一个弧度
+					cxt.beginPath();
+					cxt.lineTo(0, 10);
+					cxt.lineTo(0,-r*3/5);
+
+					cxt.lineWidth=6;
+					cxt.lineCap="round";
+
+					cxt.stroke();
+					cxt.restore();
+
+				}
+				//绘制分针
+
+				function drawmin(cxt,min){
+					var rad=2*Math.PI/60*min;
+					cxt.save();
+					cxt.translate(r,r);
+					cxt.rotate(rad);  //旋转 接受的是一个弧度
+					cxt.beginPath();
+					cxt.lineTo(0, 10);
+					cxt.lineTo(0,-r*4/5);
+
+					cxt.lineWidth=3;
+					cxt.lineCap="round";
+
+					cxt.stroke();
+					cxt.restore();
+
+				}
+				//绘制秒针
+				function drawsec(cxt,sec){
+					var rad=2*Math.PI/60*sec;
+					cxt.save();
+					cxt.translate(r,r);
+					cxt.rotate(rad);  //旋转 接受的是一个弧度
+					cxt.beginPath();
+					cxt.lineTo(-3, 20);
+					cxt.lineTo(3,20);
+					cxt.lineTo(1,-(r-20));
+					cxt.lineTo(-1,-(r-20));
+
+
+					cxt.lineWidth=3;
+					cxt.lineCap="round";
+					cxt.fillStyle="red";
+
+					cxt.closePath();
+					cxt.fill();
+					cxt.restore();
+
+				}
+				// 绘制圆点
+				function drawcenter(cxt){
+					cxt.save();
+					cxt.translate(r,r);
+					cxt.beginPath();
+					cxt.arc(0,0,6,0,2*Math.PI) //参数x,y,r,起始位置弧度,终点位置。
+					cxt.lineWidth=3;
+					cxt.fillStyle="#fff";
+
+					cxt.closePath();
+					cxt.fill();
+					cxt.restore();
+
+				}
+
+
+
+
+
+			})(document);
+		</script>
+</html>
