@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<style>
+#wrap{
+    position:relative;
+}
+#wrap div{
+    width:98px;
+    height:98px;
+    background:red;
+    text-align: center;
+    font:50px/100px "宋体";
+    border:1px solid #000;
+    position:absolute;
+
+}
+
+
+</style>
+<script >
+/*
+        t = 0;
+        l = 0;
+        0 100 200 100 0
+        0 100 200 300 400
+        for(var i = 0; i < 5; i++) {
+            t++;
+            if(i > 2) {
+                l--;
+            } else {
+                l++;
+            }
+        }
+        同理，其他几个也是应该这么做。
+    */
+    window.onload=function(){
+        var div=document.querySelectorAll("#wrap div");
+        var btn=document.getElementById("btn");
+        var arr=[fn1,fn2,fn3,fn4];
+        var now=0;
+        btn.onclick=function(){
+            arr[now%4]();
+            now++;
+        }
+        function fn1(){
+            var t=0;
+            var l=0;
+            for(var i=0; i<div.length; i++){
+                div[i].style.cssText="left:"+(l*100)+"px; top:"+(t*100)+"px;";
+                 t++;
+                 if(i>=2){
+                     l--;
+                 }else{
+                  l++;
+                 }
+            }
+
+        }
+        function fn2(){
+                var t=0;
+                var l=0;
+             for(var i=0; i<div.length; i++){
+                div[i].style.cssText="left:"+(l*100)+"px; top:"+(t*100)+"px;";
+                 l++;
+                 if(i>=2){
+                     t--;
+                 }else{
+                  t++;
+                 }
+            }
+
+        }
+        function fn3() {
+                var t = 0;
+                var l = 4;
+                for(var i = 0; i < div.length; i++) {
+                    div[i].style.cssText = "left:"+(l*100)+"px;top:"+(t*100)+"px";
+                    t++;
+                    if(i < 2){
+                        l--;
+                    } else {
+                        l++;
+                    }
+                }
+            }
+            function fn4() {
+                var t = 4;
+                var l = 0;
+                for(var i = 0; i < div.length; i++) {
+                    div[i].style.cssText = "left:"+(l*100)+"px;top:"+(t*100)+"px";
+                    l++;
+                    if(i < 2){
+                        t--;
+                    } else {
+                        t++;
+                    }
+                }
+            }
+    };
+</script>
+<body>
+<input type="button" value="开始" id="btn">
+<div id="wrap">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+</body>
+</html>
