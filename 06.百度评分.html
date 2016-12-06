@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        #box span{
+            font:30px/1 "宋体";
+        }
+        .red{
+            color:red;
+        }
+        .gray{
+            color:gray;
+        }
+        </style>
+        <script>
+            window.onload=function(){
+                var span=document.querySelectorAll("#box span");
+                var now=-1;  //默认是没有点击   声明一个变量来记录当前是第几个
+                var istop=false;  //声明一个变量来记录有没有点击。  默认是没有点击的
+                for(var i=0; i<span.length; i++){
+                    span[i].index=i;
+                    span[i].onmouseover=function(){
+                    //*****  注意在事件函数中不能用上一个for循环
+                       for(var i=0; i<span.length; i++){  //先把所有的清空
+                        span[i].className="";
+                       }
+                       for(var i=0; i<=this.index; i++){
+                            if(this.index<2){
+                            span[i].className="gray";
+                           }else{
+                            span[i].className="red";
+                           }
+                           }
+                    };
+                    span[i].onmouseout=function(){
+                        for(var i=0; i<span.length; i++){
+                            if(now<0){  // 如果没有点击的话，就清空。
+                              span[i].className="";
+                          }
+                        }
+                        if(istop){
+                            for(var i=0; i<span.length; i++){
+                                span[i].className="";
+                            }
+                            for(var i=0; i<=now; i++){
+                                if(now<2){
+                                span[i].className="gray";
+                               }else{
+                                span[i].className="red";
+                               }
+                            }
+                        }
+                    };
+                    span[i].onclick=function(){
+                            now=this.index;//等于当前点击的第几个
+                            istop=true;//点击就为真
+                    };
+                };
+            };
+        </script>
+    </head>
+    <body>
+    <div id="box">
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+        <span>❤</span>
+    </div>
+    </body>
+</html>
