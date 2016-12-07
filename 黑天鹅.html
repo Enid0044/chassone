@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        body{
+            background:#de89ac;
+        }
+        #goose{
+            width:676px;
+            height:473px;
+            position: relative;
+            margin:60px auto;
+        }
+        #goose .shard{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+
+        }
+
+        #goose .shard:nth-of-type(1){
+            -webkit-clip-path: polygon(67.6% 11.8%,67.3% 13.3%,71% 13.3%);
+            background:#c8c8c8;
+
+        }
+        #goose .shard:nth-of-type(2){
+            -webkit-clip-path: polygon(67.3% 13.3%,66.7% 22.1%,68.5% 13.3%);
+            background:#cbbdb0;
+        }
+
+         #goose .shard:nth-of-type(3){
+            -webkit-clip-path: polygon(68.5% 13.3%,71% 13.3%,66.7% 22.1%);
+            background:#aaaaaa;
+        }
+        #goose .shard:nth-of-type(4){
+            -webkit-clip-path: polygon(71% 13.3%,69% 17%,73.5% 15.3%);
+            background:#d84d50;
+        }
+        #goose .shard:nth-of-type(5){
+            -webkit-clip-path: polygon(69% 17.1%,66.7% 22.1%,67.3% 25.8%);
+            background:#bebebe;
+        }
+        #goose .shard:nth-of-type(6){
+            -webkit-clip-path: polygon(67.3% 25.8%,68.3% 21.6%,71.2% 33.0%);
+            background:#f8f1e8;
+        }
+        #goose .shard:nth-of-type(7){
+            -webkit-clip-path: polygon(67.3% 25.8%,71.2% 33.1%,69.8% 35.1%);
+            background:#c4c0b7;
+        }
+        #goose .shard:nth-of-type(8){
+            -webkit-clip-path: polygon(71.2% 33.1%,66.1% 39.7%,72.5% 41.4%);
+            background:#17140d;
+        }
+        #goose .shard:nth-of-type(9){
+            -webkit-clip-path: polygon(66.1% 39.7%,72.5% 41.4%,69.5% 47.6%);
+            background:#060606;
+        }
+        #goose .shard:nth-of-type(10){
+            -webkit-clip-path: polygon(66.1% 39.7%,62.9% 51.8%,69.5% 47.6%);
+            background:#0c0d08;
+        }
+        #goose .shard:nth-of-type(11){
+            -webkit-clip-path: polygon(66.1% 39.7%,57.1% 29.4%,49.1% 27.9%);
+            background:#363837;
+        }
+        #goose .shard:nth-of-type(12){
+            -webkit-clip-path: polygon(66.1% 39.7%,53.3% 41.6%,49.1% 27.9%);
+            background:#222627;
+        }
+        #goose .shard:nth-of-type(13){
+            -webkit-clip-path: polygon(66.1% 39.7%,53.3% 41.6%,60.9% 59.2%);
+            background:#1e1e1e;
+        }
+        #goose .shard:nth-of-type(14){
+            -webkit-clip-path: polygon(42.3% 29.4%,49.1% 27.9%,53.3% 41.6%);
+            background:#f8f1e8;
+        }
+        #goose .shard:nth-of-type(15){
+            -webkit-clip-path: polygon(42.3% 29.4%,45.7% 38.1%,53.3% 41.6%);
+            background:#b9bbb0;
+        }
+        #goose .shard:nth-of-type(16){
+            -webkit-clip-path: polygon(40.4% 35.7%,33.6% 44.6%,53.3% 41.6%);
+            background:#222627;
+        }
+        #goose .shard:nth-of-type(17){
+            -webkit-clip-path: polygon(60.9% 59.2%,33.6% 44.6%,53.3% 41.6%);
+            background:#141414;
+        }
+         #goose .shard:nth-of-type(18){
+            -webkit-clip-path: polygon(45.7% 38.1%,43.2% 31.9%,32.7% 33.8%);
+            background:#191919;
+        }
+         #goose .shard:nth-of-type(19){
+            -webkit-clip-path: polygon(33.6% 44.6%,40.4% 35.7%,32.7% 33.8%);
+            background:#191919;
+        }
+         #goose .shard:nth-of-type(20){
+            -webkit-clip-path: polygon(30.2% 40.4%,33.6% 44.6%,32.7% 33.8%);
+            background:#0c0d08;
+        }
+         #goose .shard:nth-of-type(21){
+            -webkit-clip-path: polygon(26.2% 38.9%,30.2% 40.4%,32.7% 33.8%);
+            background:#bcae92;
+        }
+        #goose .shard:nth-of-type(22){
+            -webkit-clip-path: polygon(26.2% 38.9%,24.9% 28.1%,32.7% 33.8%);
+            background:#f8f1e8;
+        }
+        #goose .shard:nth-of-type(23){
+            -webkit-clip-path: polygon(54.6% 46.3%,50.1% 44%,51.8% 52.6%);
+            background:#f8f1e8;
+        }
+         #goose .shard:nth-of-type(24){
+            -webkit-clip-path: polygon(37.9% 60.5%,50.1% 44%,51.8% 52.6%);
+            background:#c1bdb4;
+        }
+        #goose .shard:nth-of-type(25){
+            -webkit-clip-path: polygon(37.9% 60.5%,50.1% 44%,46.2% 46.9%);
+            background:#b4b4aa;
+        }
+        #goose .shard:nth-of-type(26){
+            -webkit-clip-path: polygon(37.9% 60.5%,39.6% 59.6%,46.3% 77.6%);
+            background:#918e87;
+        }
+        #goose .shard:nth-of-type(27){
+            -webkit-clip-path: polygon(44.5% 79.9%,37.9% 60.5%,46.3% 77.6%);
+            background:#727272;
+        }
+        #goose .shard:nth-of-type(28){
+            -webkit-clip-path: polygon(42.8% 90.1%,42.3% 82%,46.3% 77.6%);
+            background:#debfab;
+        }
+        #goose .shard:nth-of-type(29){
+            -webkit-clip-path: polygon(49.7% 53.5%,46.6% 55.6%,45.1% 70.6%);
+            background:#727272;
+        }
+        #goose .shard:nth-of-type(30){
+            -webkit-clip-path: polygon(48.7% 88.4%,46.3% 65.8%,45.1% 70.6%);
+            background:#87847d;
+        }
+        #goose .shard:nth-of-type(31){
+            -webkit-clip-path: polygon(61.1% 64.7%,62.2% 82.7%,64% 82.7%);
+            background:#14aa78;
+            z-index: 2;
+        }
+         #goose .shard:nth-of-type(32){
+            -webkit-clip-path: polygon(65.1% 79.1%,67% 62.9%,62.9% 79.7%);
+            background:#0f7c58;
+        }
+        </style>
+    </head>
+    <body >
+    <div id="goose">
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+            <div class="shard"></div>
+
+        </div>
+    </body>
+</html>
