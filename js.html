@@ -1,0 +1,690 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="wfo3" id="js">js</h1><p data-anchor-id="ipck">ECMAScript : javascript组成语言的语法和基本对象。（最新的ECMASCript6,用的是5.1） <br>
+Dom： 文档对象模型，描述处理网页内容的方法和接口。 <br>
+Bom:浏览器对象模型，描述与浏览器进行交互的方法和接口。</p><hr><div class="md-section-divider"></div><h1 data-anchor-id="u9bz" id="for循环">for循环</h1><pre data-anchor-id="eerb"><code>for(var i=0; i&lt;5; i++){
+    alert(i);
+}
+</code></pre><p data-anchor-id="8ukk">*操作一组元素的时候使用 <br>
+   *在事件函数种是不能调用for循环的i</p><div class="md-section-divider"></div><h1 data-anchor-id="uslz" id="逻辑运算符">逻辑运算符</h1><pre data-anchor-id="cvvs"><code>&lt;=  //小于等于
+&gt;   //大于
+==  //等于（会隐形转换）
+！=  //不等于
+&gt;=  //大于等于
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="76a0" id="加载完成之后执行">加载完成之后执行</h1><pre data-anchor-id="zpmw"><code>window.onload.functoin(){    //当整个页面加载完成之后
+
+}
+img.onload.function(){} // 通过onload事件可以监听这个图片是否加载完成。
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="ak3z" id="变量">变量</h1><pre data-anchor-id="ix3w"><code>var a //变量声明
+a=10; //变量赋值
+a;    //调用变量
+var a =3 // 右侧的值赋给左侧
+*允许字母，数字，下划线，$  组合而成
+* 不允许数字开头
+* 不允许使用关键字，保留字
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="ugks" id="属性的操作">属性的操作</h1><pre data-anchor-id="e7sg"><code>" . "   //只能写死值，不能用变量这些东西
+" [] "  //可以接受字符串， 所以可以用变量
+" = "   //赋值 
+csstext   //行间样式的集合
+innerHTML //元素的内容
+" ++ " //自加
+"--" //自减
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="38lm" id="自定义属性">自定义属性</h1><pre data-anchor-id="5k78"><code>ele[i].index=i; //给这组元素的每一个对象添加一个序列号
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="fka9" id="数组">数组</h1><pre data-anchor-id="pm8n"><code>var arr=[1,2,3];
+</code></pre><p data-anchor-id="u72x">1. 数组里面可以存放任何类型的数据，但一般每个数组只存放一种类型的数据 <br>
+ 2. 数据中用 " , " 隔开 <br>
+ 3. 下标（从0开始计算） <br>
+ 4. arr.length; 数组的长度</p><hr><div class="md-section-divider"></div><h1 data-anchor-id="sjhh" id="if判断">if判断</h1><pre data-anchor-id="kkxv"><code>if(判断的条件){
+    条件成立要执行的代码
+}else{
+    条件不成立要执行的代码
+}
+</code></pre><ul data-anchor-id="21bo">
+<li>在判断中0为false，除0以外任何数值都为true；</li>
+<li>null为false 反之为true；</li>
+</ul><hr><div class="md-section-divider"></div><h1 data-anchor-id="qd49" id="三元运算">三元运算</h1><p data-anchor-id="e45z">格式：</p><pre data-anchor-id="npbu"><code>a&gt;5? alert("我是小五")：alert("我不是小五")； //判断条件？成立要做的事情：不成立要做的事情
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="k16t" id="switch">SWitch</h1><p data-anchor-id="e39c">格式：</p><pre data-anchor-id="wmhq"><code>switch(要判断的条件){
+    case 1:    //如果要判断的内容==1
+    alert（1）；   //成立要做的事情
+    break；    //终止的语句
+    case 2:    
+    alert（2）；   
+    break；    
+    default;   //都不成立要做的事情
+}
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="qbvw" id="continue-跳过本次循环">Continue (跳过本次循环)</h1><pre data-anchor-id="de6u"><code>for(var i=0; i&lt;5; i++）{
+    if(i==3){
+        continue;   //跳出本次循环
+    }
+}
+</code></pre><ul data-anchor-id="z39x">
+<li>结果为0，1，2，4；</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="v85x" id="逻辑符">逻辑符</h2><pre data-anchor-id="bcb0"><code>" || "     //或者
+" ! "     //否
+" &amp;&amp; "     //并且
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="wpu8" id="数据转换">数据转换</h1><div class="md-section-divider"></div><h2 data-anchor-id="bvax" id="isnan">isNaN</h2><ul data-anchor-id="jchz">
+<li>两个值   true （不是数字）    false（是数字）</li>
+<li><p>可以用来判断是不是数字； //可以用number来转换，number可以转换的就是false</p>
+
+<p><code>var  a="100"; <br>
+    alert(isNaN(a));   //结果是一个false</code></p></li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="1u9s" id="parseint-转为整数">parseInt  (转为整数)</h2><pre data-anchor-id="6u6f"><code>格式：
+parseInt(要转换的内容，进制)  //第2个参数是可选的，默认为16进制；
+示例：
+</code></pre><p data-anchor-id="hnma"><code>var n=1a2.13; <br>
+    alert(parseInt(n));   //结果为1；</code></p><ul data-anchor-id="lr21">
+<li>转换类型的时候从左向右一位一位，如果碰到了非数字就把非数字之前的内容返回来；不是数字的就返回一个NaN；</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="n1gv" id="parsefloat-转为浮点型">parseFloat (转为浮点型)</h2><pre data-anchor-id="62iq"><code>` var n=12.1a3;
+alert(parseFloat(n));   //结果为12.1；`
+</code></pre><ul data-anchor-id="qujg">
+<li>转换的方法和parseInt一样， 就是多识别小数</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="ifo3" id="typeof-数据类型共6种">typeOf 数据类型（共6种）</h2><ol data-anchor-id="pfer">
+<li>string //字符串类型</li>
+<li>Number //数字类型</li>
+<li>boolean //布尔值</li>
+<li>null  //空</li>
+<li>undefined // 未定义</li>
+<li>object  //对象</li>
+</ol><p data-anchor-id="gg78">*在使用 “ + ” 的时候，如果碰到了字符串（或者不能进行+法运算的时候）就会把+左右两侧都转换成字符串连接起来 <br>
+*NaN 不是数字</p><hr><div class="md-section-divider"></div><h1 data-anchor-id="mmdl" id="传参">传参</h1><pre data-anchor-id="l78m"><code>function fn(a){   //a是形参
+    alert(a)
+};
+fn(5);  //5是实参
+</code></pre><p data-anchor-id="sg6r">注意事项1.传参里面的声明（无var） 是不能修改预解析的值</p><hr><div class="md-section-divider"></div><h1 data-anchor-id="915d" id="不定参-arguments">不定参 arguments</h1><div class="md-section-divider"></div><h3 data-anchor-id="hhqs" id="例子不定参的求和">例子：不定参的求和</h3><pre data-anchor-id="mlw2"><code>function fn(){
+    var nub = 0;
+    for(var i = 0; i &lt; arguments.length; i++){
+        nub += arguments[i];
+    }
+    console.log(nub);
+}
+fn(1,2,3,4,5,6,7);  //fn函数，可以接受n个参数，接收到参数之后，把所有参数的和打出来 
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="nbg5" id="return-函数执行之后的结果">return  (函数执行之后的结果)</h1><p data-anchor-id="jfts">###例子：</p><pre data-anchor-id="s77b"><code>function fn() {
+    var a = 2;
+    var b = 1;
+    b += a;
+    return b;
+}
+console.log(fn())   //在函数中，return后边写的内容就是我们的函数返回值
+</code></pre><ul data-anchor-id="fqxu">
+<li>当我们需要在函数外边拿到函数的执行结果的时候，就需要使用函数返回值</li>
+</ul><hr><div class="md-section-divider"></div><h1 data-anchor-id="43tm" id="计算后的样式">计算后的样式</h1><p data-anchor-id="0qhm"><strong>标准浏览器</strong></p><pre data-anchor-id="x48p"><code> getComputedStyle(要获取样式的元素)["样式名"]; `
+    1. 颜色值 拿到的是 rgb样式
+    2. getComputedStyle只能获取 不能设置
+    3. IE6.7.8不支持 getComputedStyle
+</code></pre><p data-anchor-id="vqxy"><strong>IE6, 7,8的样式</strong></p><pre data-anchor-id="pr90"><code>要获取样式的元素.currentStyle["样式名"];
+1. 不能获取复合样式
+2. 只兼容IE8包含IE8之前的IE浏览器
+</code></pre><p data-anchor-id="qsxz">兼容的写法：</p><pre data-anchor-id="v53t"><code>function css(el,attr){
+    if(el.currentStyle) {
+        return el.currentStyle[attr];
+    }
+    return getComputedStyle(el)[attr];
+}
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="oprz" id="作用域">作用域</h1><p data-anchor-id="vu3o"><strong>全局作用域：</strong></p><pre data-anchor-id="5cul"><code>不在任何函数中声明的变量和函数属于全局作用域，全局作用域的内容在任何作用域都可以访问
+</code></pre><p data-anchor-id="6ova"><strong>局部作用域：</strong></p><pre data-anchor-id="kvow"><code>在某个函数中的声明的变量和函数属于局部作用域，局部作用域的内容只能在局部作用域和子级作用域才能使用
+</code></pre><p data-anchor-id="q3hy"><strong>作用域关系：</strong></p><pre data-anchor-id="rlie"><code>1、父级作用域不能访问子级作用域
+2、子级作用域可以访问父级。
+</code></pre><p data-anchor-id="co5p"><strong>作用域链:</strong></p><pre data-anchor-id="u3is"><code>在一个作用域中访问一个变量或者函数时，如果当前作用域没有这个变量或者函数，这时候会去寻找父级的作用域是否有这个变量或者函数，如果有就调用，如果没有就继续向上查找。如果找到全局作用域还没有就会报错。
+ fn();  //结果是momo    如果直接调用fn1的话是不可以调取的（局部作用域）
+function fn(){
+    var momo = 1;
+    function fn1(){
+        alert(momo);
+    }
+}
+</code></pre><p data-anchor-id="qsvi"><strong>预解析:</strong>  </p><pre data-anchor-id="s307"><code>在script标签中,会先进行预解析，会把所有的函数和 和声明的变量名 放在整个script标签的最前边
+</code></pre><hr><p data-anchor-id="tuxd"><strong>注意事项</strong></p><ol data-anchor-id="j68v">
+<li>表达式是可以修改预解析的值，但预解析不能修改表达式的值</li>
+<li>所有的函数在正式运行代码之前，整个函数块所有的变量都是未定义</li>
+</ol><hr><div class="md-section-divider"></div><h1 data-anchor-id="5prx" id="闭包">闭包</h1><pre data-anchor-id="9uky"><code> 1.闭包是一种书写形式,表现为函数中由嵌套了一个函数
+ 2.子函数可以访问父函数的作用域
+ 3.提供一个命名空间,避免了全局污染,提升了代码的私有性
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="kgpj" id="js垃圾回收机制">js垃圾回收机制:</h1><pre data-anchor-id="xxdp"><code>1. 变量都是存在哪? -- 内存
+2. 满足某些条件的时候，js就把存入内存数据删掉
+    1) 关闭页面
+    2) 当这条数据 不在被调用的时候
+3.函数执行完之后，就把这个函数作用域种的数据，从内存中释放掉
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="daec" id="定时器">定时器</h1><p data-anchor-id="arm2"><strong>间隔定时器</strong></p><pre data-anchor-id="wfut"><code>setInterval(fn,间隔时间);  //返回值： 定时器编号 
+</code></pre><p data-anchor-id="dy4v"><strong>延迟定时器</strong></p><pre data-anchor-id="z8to"><code>setTimeout(fn,延迟时间);  //返回值： 定时器编号  
+</code></pre><p data-anchor-id="1awm"><strong>关闭定时器</strong></p><pre data-anchor-id="5fsi"><code>clearInterval(编号) --- 清除重复执行定时器
+clearTimeout(编号) --- 清除重复执行定时器
+</code></pre><ol data-anchor-id="rvt0">
+<li>js 本身是单线程操作,定时器除外每开启一个定时器，就相当于开启了一个新的线程</li>
+<li>注意在定时器中 this指向window</li>
+<li>定时器管理的第一种思路，先关闭再开启</li>
+<li>定时器管理的第二种思路，判断定时器在执行，就不开启新的定时器，否则在开启新的</li>
+</ol><hr><div class="md-section-divider"></div><h1 data-anchor-id="fvsa" id="tween">Tween</h1><pre data-anchor-id="lme6"><code>t: 执行至 第几次
+b: 起始值
+c: 差值(目标点和起始值的差值)
+d: 执行总次数
+
+return 本次应该在的位置
+
+linear 匀速
+easeIn 加速
+easeOut 减速
+easeBoth 先加速后减速
+easeInStrong 二次方加速
+easeOutStrong 二次方减速
+easeBothStrong 二次方先加速后减速
+elasticIn 弹性在开始方向
+elasticout 弹性在结束方向
+elasticBoth 弹性 开始和结束都有
+backIn 回弹 在开始方向
+backOut 回弹 在结束方向
+backBoth 回弹 开始和结束都有
+bounceIn  碰撞 在开始方向
+bounceOut 碰撞 在结束方向
+bounceBoth 碰撞 开始和结束都有
+</code></pre><p data-anchor-id="x9ns">语法：<code>Tween["运动的方式"]（t,b,c,d）;</code> <br>
+案例：</p><pre data-anchor-id="5nsu"><code>var btn = document.querySelector("input");
+var box = document.querySelector("#box");
+var t = 0;
+var b = 0;
+var c = 200;
+var d = 20;
+btn.onclick = function() {
+    t++;
+    console.log(t);
+    var left = Tween["bounceOut"](t,b,c,d);
+    box.style.left = left+"px";
+};
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="ij6w" id="创建新数组的方法">创建新数组的方法</h1><pre data-anchor-id="ga9h"><code>1. var arr=new Array;
+2. var  arr=[];
+3. var arr=Array.of(1); //长度为1的空数组，   参数可以为空，默认为0；
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="8m1r" id="时间">时间</h1><p data-anchor-id="6jus"><strong>获取时间</strong></p><pre data-anchor-id="tozq"><code>var date=new Date()  //创建本地的时间
+var year = date.getFullYear(); //获取年份
+var month = date.getMonth(); //获取月份 0 - 11 获取到的月份要加1才是当前月份
+var date2 = date.getDate(); //获取日期 1 - 31
+var day = date.getDay(); //获取一周内的第几天  周日为0
+var hours = date.getHours();// 获取当前小时数 0 - 23
+var minutes = date.getMinutes(); //获取分钟数 0 - 59
+var seconds = date.getSeconds(); // 获取秒钟数 0 - 59
+var mSeconds = date.getMilliseconds(); //获取毫秒数 0 - 999
+</code></pre><p data-anchor-id="rhbh"><strong>时间戳</strong></p><pre data-anchor-id="9m9u"><code>var time = date.getTime(); //时间戳，当前时间 距离 国际标准时间(1970-01-01 00:00:00) 的时间差 (单位,毫秒)
+</code></pre><p data-anchor-id="xaf5"><strong>设置时间</strong>（将get改成set）</p><pre data-anchor-id="y6ek"><code>date.setFullYear(year,month,date);   //设置年份，月份，日期
+date.setMonth(month,date);    //设置月份，日期
+date.setDate(date);   //设置日期
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="9ljt" id="math">Math</h1><pre data-anchor-id="3ii4"><code>取绝对值 Math.abs(nub);    //return nub的绝对值
+向上取整 Math.ceil(nub);     //return nub向上取整的结果
+向下取整 Math.floor(nub); //return nub向下取整的结果
+四舍五入 Math.round(nub);  //return nub小数位四舍五入的结果
+最大值 Math.max(nub,nub)   //
+取最小值 Math.min(nub,nub)  
+求平方根 Math.sqrt(nub)  //返回nub的平方根
+求幂  Math.pow(x,y)  //   返回 x 的 y 次幂(方)。
+圆周率 Math.PI
+随机数 Math.random //返回0-1之间的数字，但不包含1
+        **常用的取整公式**
+            x-y :  Math.round(Math.random()*(y-x)+x);
+            0-x :  Math.round(Math.random()*x);
+            1-x :  Math.round(Math.random()*X)||x;
+            0 ~ x-1 : Math.floor(Math.random()*x)
+</code></pre><p data-anchor-id="fhkz">例：（求数组的最大值）</p><pre data-anchor-id="ymr1"><code>var arr=[22,34,231,54]
+var m=Math.Max.apply(null, arr);  //.apply会把数组里面的参数依次传入进去
+alert(m);    //结果为231码
+</code></pre><div class="md-section-divider"></div><h1 data-anchor-id="sdwu" id="字符串的方法">字符串的方法</h1><pre data-anchor-id="scju"><code>str.indexOf(meedle,index);  //第1个参数要查找的字符串，  第2个参数从指定的位置开始找
+ *返回值：找到了返回所在位置的下标，没有找到返回-1；
+</code></pre><hr><pre data-anchor-id="vk50"><code>str.lastIndexOf(meedle,index)     //与indexOf参数一样返回值一样，不过它是从后往前找
+</code></pre><hr><pre data-anchor-id="hc7k"><code>str.startsWith(meedle) //用来判断查找的字符串在不在开头，返回值true||false；
+</code></pre><hr><pre data-anchor-id="11je"><code>str.slice(start,end) //用来截取字符串，从start位开始，到end位结束 返回值不包括结束位
+</code></pre><hr><pre data-anchor-id="ezut"><code>str.substr(start,muns) //用开截取字符串，从start位开始，截取muns位;
+*它与slice的区别是当strat&gt;muns,会交换位置，而slice不会
+str.substring(start,end)；
+//用来截取字符串，从start位开始，截取第end位；
+</code></pre><hr><pre data-anchor-id="6r21"><code>str.split(用什么来分割，分割几位) // 用来分割字符串。
+例：str="zhangmeng";
+str.split(""); //返回值["z", "h", "a", "n", "g", "m", "e", "n", "g"]；
+</code></pre><hr><pre data-anchor-id="ii04"><code> str.touppercase();  //所有字母转大写
+ str.toLowercase(); //所有字母转小写
+</code></pre><hr><pre data-anchor-id="r405"><code>str.charAt(下标)； //查找对应下标的字符
+</code></pre><hr><pre data-anchor-id="v4w0"><code>str.charCodeAt(下标)； //返回对应字符的unicode编码
+</code></pre><hr><pre data-anchor-id="pu4j"><code>str.replace(要替换的内容，新内容)； 
+</code></pre><hr><pre data-anchor-id="06l4"><code>str.trim();//用来去掉字符串中的空格 
+</code></pre><hr><pre data-anchor-id="l2ev"><code>str.repeat
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="ba6s" id="数组的方法">数组的方法</h1><p data-anchor-id="f55i"><strong>判断是否是数组?</strong> <br>
+ 例：</p><pre data-anchor-id="lbsg"><code>var arr=[];
+Array.isArray(arr);   //返回true
+</code></pre><hr><p data-anchor-id="d445"><strong>利用下标查找数组</strong></p><pre data-anchor-id="h3vc"><code>arr.indexOf(查找数组中的某一项,从第几位开始找);   //返回对应的下标
+arr.lastIndexOf(查找数组中的某一项,从第几位开始找) //从后往前找
+</code></pre><hr><p data-anchor-id="eexd"><strong>添加删除数组</strong></p><pre data-anchor-id="v8uo"><code>arr.push() //往数组后面添加新的数据   返回值数组长度
+arr.unshift  //往数组前面添加数据     返回值数组长度
+arr.pop()   //删除数组中的最后一位 （参数可以是第几位）   返回值删除的数据
+arr.shift();//删除数组中的第一位 （无参数）     返回值删除的数据
+</code></pre><hr><p data-anchor-id="5w82"><strong>截取数组</strong></p><pre data-anchor-id="vwtf"><code>arr.slice(截取的位数，结束的位数);  //返回值是截取出来的数组，不包括结束位  数组本身不变；
+arr.splice(从第几位开始，删除几位，替换的新数据)  //返回值是被删除的元素
+</code></pre><hr><p data-anchor-id="881j"><strong>将类数组转为数组</strong></p><pre data-anchor-id="nuud"><code>Array.from();  //返回值是转换的数组；
+</code></pre><hr><p data-anchor-id="qg6v"><strong>反转数组</strong></p><pre data-anchor-id="rv8w"><code>arr.reverse();  //返回值反转的数组
+</code></pre><hr><p data-anchor-id="btuz"><strong>便利数组</strong></p><pre data-anchor-id="tu9i"><code>arr.forEach(function(item,i,arr){
+
+}); //item代表数组中的每一项， i代表每一项的下标，  arr代表数组本身
+</code></pre><hr><pre data-anchor-id="vvme"><code>arr.map(fn) //使用的方法与forEach一样，只不过它接受的函数参数有返回值
+</code></pre><hr><p data-anchor-id="22ly"><strong>往数组里指定位置填充内容</strong></p><pre data-anchor-id="t6lq"><code>arr.fill(要填充的内容，开始填充的位置，结束的位置)  //用来填充数组；
+</code></pre><p data-anchor-id="ou16">例：</p><pre data-anchor-id="ya9x"><code>   var arr=["hao", "11111", "ni", "su", "yi"];
+   arr.fill("11111",1,4);  //返回值["hao", "11111", "11111", "11111", "yi"]
+</code></pre><hr><p data-anchor-id="wogr"><strong>把数组转成字符串</strong></p><pre data-anchor-id="d4rz"><code>arr.jion() //把数组转换成字符串，参数是什么就用什么来连接
+</code></pre><p data-anchor-id="wxdd">例：</p><pre data-anchor-id="o4ib"><code>var arr=[1,2,3]
+arr.join(" ");   //返回值 "1 2 3";
+</code></pre><p data-anchor-id="ypqc"><strong>数组连接</strong> <br>
+例：</p><pre data-anchor-id="ii3e"><code>var arr1=[1,2,3]
+var arr2=[4,5,6]
+var arr3=[7,8,9]
+var b=arr1.concat(arr2,arr3);    //[1,2,3,4,5,6,7,8,9]
+</code></pre><hr><p data-anchor-id="5jl3"><strong>数组排序</strong></p><p data-anchor-id="09g3">1.从小到大</p><pre data-anchor-id="r8dr"><code> arr.sort(function(a,b){
+    return a - b;
+});  
+</code></pre><p data-anchor-id="x2ox">2.从大到小</p><pre data-anchor-id="7dbd"><code>arr.sort(function(a,b){
+    return b - a;
+}); 
+</code></pre><p data-anchor-id="0zst">3.随机排序</p><pre data-anchor-id="xww2"><code>arr.sort(function(){
+    return 0.5-Math.random();
+})
+</code></pre><p data-anchor-id="zixb">例：中文数组的排序</p><pre data-anchor-id="517n"><code>var arr = ["一","五","七","二","三","六","四"];
+    var arrIndex = {
+        一: 1,
+        二: 2,
+        三: 3,
+        四: 4,
+        五: 5,
+        六: 6,
+        七: 7
+    };
+    arr.sort(function(a,b){
+        return arrIndex[a] - arrIndex[b];
+    });
+    console.log(arr); 
+</code></pre><p data-anchor-id="9wby">例：快速排序方法</p><pre data-anchor-id="sgm3"><code>var arr = [5,4,3,2,1,0];
+    for(var i = 0; i &lt; arr.length; i++) {
+        for(var j = 0; j &lt; arr.length - i; j++) {
+            if(arr[j] &gt; arr[j+1]) {
+                var temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+</code></pre><hr><div class="md-section-divider"></div><h2 data-anchor-id="bid8" id="行间自定义的属性">行间自定义的属性</h2><p data-anchor-id="edwf"><strong>设置属性</strong></p><pre data-anchor-id="hfbq"><code>setAttrbute(自定义属性名称，值)；
+obj.dataset['属性名']="值"；
+</code></pre><p data-anchor-id="j4eb"><strong>获取属性</strong></p><pre data-anchor-id="huwz"><code>getAttrbute(属性名)； //包括src路径。
+console.log(obj.dataset['属性名'])
+</code></pre><p data-anchor-id="za9z"><strong>粗体文本</strong></p><pre data-anchor-id="c68h"><code>removeAttribute(属性名)；
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="t3ox" id="dom">Dom</h1><div class="md-section-divider"></div><h3 data-anchor-id="qpjm" id="节点的类型划分注意对应的数字">节点的类型划分（注意对应的数字）</h3><pre data-anchor-id="rlpc"><code>1. 元素节点(所有的标签)
+2. 属性节点
+3. 文本节点
+8. 注释节点  （注释后面的空文本节点也算是一个文本节点）
+9. document
+</code></pre><div class="md-section-divider"></div><h3 data-anchor-id="9fab" id="获取节点">获取节点</h3><pre data-anchor-id="65d7"><code>- nodeType //查看节点类型
+- nodeName //查看节点名字
+- nodeValue //查看节点值
+- attribute  // 查看属性  （attributes是复合样式加下标）
+- childNodes  //获取某个节点下的所有子节点
+- children  //获取某个节点下的所有元素节点
+- parentNode  //父节点
+- fistElementChild   //  第一个元素节点
+- lastElementChild   // 最后一个元素节点
+- previousElementSibling  //上一个兄弟节点
+- nextElementSibling   //下一个兄弟节点
+</code></pre><hr><div class="md-section-divider"></div><h2 data-anchor-id="3m7j" id="节点操作"><strong>节点操作</strong></h2><p data-anchor-id="hceu">1.在一个节点前插入一个指定的节点</p><pre data-anchor-id="4o62"><code>父级.insertBefore(新元素，元素)；
+</code></pre><p data-anchor-id="gca7">2.删除子元素</p><pre data-anchor-id="us1d"><code>父级.removeChild(子元素)； //不用加引号
+</code></pre><p data-anchor-id="cp0i">3.创建元素</p><pre data-anchor-id="ccwt"><code>document.createElement("tag") //记得加引号
+</code></pre><p data-anchor-id="4kn2">4.在元素末尾添加子元素</p><pre data-anchor-id="ic13"><code>父级.appendChild(子元素)； //不用加引号
+</code></pre><p data-anchor-id="ygbj">5.替换节点</p><pre data-anchor-id="aefi"><code>父级.replaceChild(新节点，被替换的节点)；
+</code></pre><p data-anchor-id="kp9o">6克隆元素节点</p><pre data-anchor-id="qiya"><code>克隆的元素.cloneNode(boolean)  //参数ture 包含元素的子孙节点； false不包含；
+</code></pre><div class="md-section-divider"></div><h1 data-anchor-id="vcjq" id="表格">表格</h1><p data-anchor-id="6aga">1.获取tbody</p><pre data-anchor-id="a3fr"><code>var tboay=table.tBodie[0];
+</code></pre><p data-anchor-id="o8fr">2.获取tr</p><pre data-anchor-id="kk3q"><code>var rows=tbody.rows;
+</code></pre><p data-anchor-id="qfmk">3.获取tFoot</p><pre data-anchor-id="ank1"><code> var tFoot=tody.tFoot;
+</code></pre><p data-anchor-id="17sg">4.获取单元格的内容</p><pre data-anchor-id="qkkt"><code>var td=rows[0].cells
+</code></pre><p data-anchor-id="kh5w">5.获取表头</p><pre data-anchor-id="79c3"><code>var tHead=table.tHead
+</code></pre><div class="md-section-divider"></div><h1 data-anchor-id="anj2" id="获取元素时应该注意的事项">获取元素时应该注意的事项</h1><pre data-anchor-id="bzyr"><code>1，getElement || children       //每次调用的时候都会重新获取
+2.query                         //只获取一次单独存放
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="ahok" id="bom">Bom</h1><p data-anchor-id="2ax2">*主要负责对浏览器窗口进行操作，和窗口和窗口之间的交互 <br>
+*Bom包括navigator导航器对象，history历史对象， screen, 显示器对象，location对象，对话框，定时器，document.</p><pre data-anchor-id="6h1y"><code>1. 当滚动条滚动时触发
+    window.onscoll=function(){
+
+     }
+
+2. 当窗口大小发生变化时
+    window.onresize=function(){
+
+    }
+3.设置滚动条的距离
+    window.scrollTo(x,y)
+4.获取内容高度
+    document.body.scollHeight(文档高度+margin+padding+border);
+    document.body.offsetHeight(文档高度+padding+border);
+    document.body.clientHeight(文档高度+padding);
+    clientLeft/clintTop(元素左边框的宽度，元素上边框的宽度)；
+    getBoundingClintRect();
+        width||height  可视宽高   也就是文档高度+padding+border
+        left||top    相对可视区的绝对坐标，跟着鼠标滚动变化
+5.获取可视区宽度
+    window.innerWidth(包含滚动条)
+    document.documentElement.clintWidth(不包含滚动条)
+6.获取滚动条高度
+    window.pageYOffset  //标准浏览器（不包括IE9以下）
+    document.body.scrollTop  //谷歌
+    document.documentElement.scrollTOp //IE和火狐
+    window.scrollY    //移动端
+7.打开窗口
+    window.open(指定页面的网址，打开方式，窗口特性)；
+        打开方式：_blanK(默认)新窗口打开       _seif  在本窗口打开
+8.浏览器地址信息
+    window.location.href(url后面的内容)
+    window.location.search(url ? 后面的内容)；
+    window.location.hash(url # 后面的内容)；
+        //hash 哈希
+        //host
+        //search 提交信息
+        //hostname
+        //href 地址，读写属性
+        //origin
+        //pathname
+9.判断浏览器的版本
+    window.navigator.userAgent
+    例：
+    if(window.navigator.userAgent.indexOf("MSIE")!=-1){
+        alert("我是IE");
+    }else{
+        alert("我不是IE");
+    }
+</code></pre><div class="md-section-divider"></div><hr><div class="md-section-divider"></div><h1 data-anchor-id="t18p" id="鼠标事件">鼠标事件：</h1><pre data-anchor-id="8ycs"><code> 1. onclick  //鼠标点击
+ 2. onmouseover  //鼠标移入
+ 3. onmouseout  //鼠标移开
+ 4. oumousemove  // 鼠标移动
+ 5. onmouseup   //鼠标抬起
+ 6. ondblclick  //鼠标双击
+ 7.oncontextmenu   //右击事件
+ 8.onmousewhell   //滚轮事件
+ 9.onmousedown    //鼠标按下
+</code></pre><blockquote data-anchor-id="d7v1" class="white-blockquote">
+  <p>可以用单击的频率判断是否双击。 <br>
+  <code>+new Date()=new Date getTime();</code>    //获取时间戳的方法 <br>
+      var old=null; <br>
+      btn.onclick=function(){ <br>
+          if((+new Date()-old)&lt;150){ <br>
+              alert("双击")； <br>
+          } <br>
+          old=+new Date();  <br>
+      }</p>
+</blockquote><div class="md-section-divider"></div><h1 data-anchor-id="x4pl" id="键盘事件">键盘事件</h1><pre data-anchor-id="b613"><code>1. window.onkeydown=function(){}   //键盘按下
+2. window.onkeyup=function(){}  //键盘抬起
+   * event    //是一个全局的对象（只能事件函数调用）
+   * e.target //获得触发事件的元素 
+   *e.keyCode  //获取键值
+        ctrlKey，shiftKey，altKey
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="gar2" id="事件绑定">事件绑定</h1><div class="md-section-divider"></div><h5 data-anchor-id="eil9" id="绑定事件">绑定事件：</h5><pre data-anchor-id="wkbn"><code>IE： obj.attachEvent(事件名称（加on），事件函数)；
+标准： obj.addEventListener(事件名称（不加on）,事件函数，是否捕捉（可选，默认false）);
+</code></pre><hr><div class="md-section-divider"></div><h5 data-anchor-id="uul0" id="取消事件绑定">取消事件绑定：</h5><pre data-anchor-id="mash"><code>IE:obj.datachEvent(事件名称（加on），事件函数)；
+标准： obj.removeEventListener(事件名称（不加on）,事件函数，是否捕捉（可选，默认false）；
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="pxgu" id="阻止默认行为">阻止默认行为</h4><pre data-anchor-id="u6cz"><code>return false;  //传统的事件绑定
+ev.preventDefault(); //事件绑定的情况下
+obj.release Capture()   //IE下
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="z769" id="表单">表单</h1><pre data-anchor-id="zi5h"><code>input.onfocus   //获得焦点
+input.onblur   //失去焦点
+input.onchange  // input的内容发生变化时
+oninput  //input的value值发生变化时（在输入的时候就执行）
+onsubmit  //当表单提交的时候触发  （return false  阻止提交）
+input.select()/textarea.select()//选中input或textarea中的内容。
+默认焦点： input.focus();
+失去默认焦点： input.blur();
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="o5wd" id="冒泡">冒泡</h1><p data-anchor-id="quuv">1.事件流</p><pre data-anchor-id="q3ti"><code>当某个元素事件被触发的时候，从捕获阶段到冒泡阶段的整个过程就叫事件流（事件模型）从window起，到window结束；
+</code></pre><p data-anchor-id="cfgw">2.什么叫冒泡？</p><pre data-anchor-id="huv6"><code>子父级都有相同的事件绑定，才会有冒泡发生。（取消冒泡是在子级）；
+</code></pre><p data-anchor-id="bv59">3.取消冒泡</p><pre data-anchor-id="pjhj"><code> 在子级取消
+ ev.cancelBubble =true;阻止冒泡（并不是标准，但是所有浏览器都兼容）
+ev.stopPropagation(); 是标准，但是低版本IE不兼容。阻止冒泡
+</code></pre><p data-anchor-id="n5h1">4.事件监听</p><pre data-anchor-id="12m0"><code>ev.target:(事件监听、事件委托)
+            事件源：触发事件的源头
+
+            注意：
+                监听事件源只能监听父级中的子级，父级的兄弟元素是监听不到父级的子元素的。
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="lh35" id="正则">正则</h1><pre data-anchor-id="dfnv"><code>主要是用来匹配（擅长匹配模糊范围的字符串）字符串，是一种规则，效率更高，速度更快，但是维护性差（读起来很费劲）。
+</code></pre><div class="md-section-divider"></div><h3 data-anchor-id="1mtt" id="正则的规范写法">正则的规范写法</h3><pre data-anchor-id="w3to"><code>写法一：
+            简写：/规则/    这种性能要更高。
+
+写法二：
+            new RegExp(字符串的规则,修饰符);
+</code></pre><div class="md-section-divider"></div><h3 data-anchor-id="sh0e" id="正则的方法">正则的方法</h3><div class="md-section-divider"></div><h3 data-anchor-id="v06k" id="1修饰符不分前后顺序">1.修饰符（不分前后顺序）</h3><pre data-anchor-id="3k0a"><code>    g  -&gt; global  全局
+    i:忽略大小写。
+    m:执行多行匹配
+</code></pre><div class="md-section-divider"></div><h3 data-anchor-id="z4ta" id="2量词">2.量词：</h3><pre data-anchor-id="0qs0"><code>    n+      //匹配任何包含至少一个n的字符串
+    n?      //可以有可以没有
+    n$      //匹配结尾为n的字符串
+    ?=n      //匹配任何其后紧接指定字符串n的字符串
+    n{x}      //匹配包含X个n的序列的字符串
+    n{x,y}    //匹配最少x位，最多y位
+    n*       //匹配任何包含零个，或者多个；
+</code></pre><div class="md-section-divider"></div><h3 data-anchor-id="jmnb" id="3方括号表达式">3.方括号（表达式）</h3><pre data-anchor-id="w9qt"><code> [abc]  //任取其一
+  "^"     //开头
+  "$"     //结束
+  [^abc]  //排除掉abc
+  [0-9]   //0-9的数字
+  [a-z]   //小写a到z之间字符
+  [A-Z]   //小写A到Z之间字符
+  [\u4e00-\u9fa5]    //中文范围
+</code></pre><p data-anchor-id="jr71">###4.元字符（拥有特殊含义的字符）</p><pre data-anchor-id="29fy"><code>\w     //单词字符
+\W     //非单词字符
+\d     //数字
+\D     //非数字
+\s     //空格
+\S     //非空格
+\b     //单词边界
+\B     //非单词边界
+\n     //换行符
+\f     //换页符
+\r     //回车
+</code></pre><div class="md-section-divider"></div><h3 data-anchor-id="psnd" id="5string对象的方法">5.string对象的方法</h3><div class="md-section-divider"></div><h4 data-anchor-id="7quk" id="search检索与正则表达式相匹配的值找到范围位置没找到返回-1">search（检索与正则表达式相匹配的值，找到范围位置，没找到返回-1）</h4><pre data-anchor-id="kc1n"><code>格式：
+        str.search(''||re);
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="wqf4" id="match找到一个或多个正则表达式的匹配将匹配到的字符放到一个数组中">match(找到一个或多个正则表达式的匹配，将匹配到的字符放到一个数组中)；</h4><pre data-anchor-id="u7fb"><code>格式:
+        str.match(正则)；
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="wbj1" id="replace替换与正则表达式匹配的值">replace(替换与正则表达式匹配的值)；</h4><pre data-anchor-id="exx9"><code>格式：
+str.replace(要替换哪个||正则,替换成什么||回调函数);
+回调中必须写return，不然会为undefined
+如果只传一个参数，那么匹配到的字符就会被替换为undefined    
+</code></pre><hr><p data-anchor-id="x0kn">test （检索字符串中指定的值，返回true或者false）；</p><pre data-anchor-id="xmwx"><code>格式：正则.test(str)；
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="76cs" id="面向对象">面向对象</h1><div class="md-section-divider"></div><h3 data-anchor-id="g5jf" id="什么是面向对象">什么是面向对象？</h3><pre data-anchor-id="1vxh"><code>最主要的是象-&gt;抽象-&gt;抽离-&gt;抽离的类（可以理解为之前我们封装的函数）
+把具有相同特征的代码抽离出来封装为一类，在这一类上扩充方法或者属性，让这个类（功能）更强大。
+ 三大特征：封装，继承，多态。
+ 在写面向对象时尽量不要函数嵌套函数。
+</code></pre><p data-anchor-id="wu75">注意： <br>
+     1.把方法写在原型下，提高性能。 <br>
+     2.尽量不要去修改或者添加系统对象下面的方法和属性</p><hr><div class="md-section-divider"></div><h4 data-anchor-id="wh79" id="构造函数">构造函数？</h4><pre data-anchor-id="psli"><code>new后面的函数就是构造函数
+这个函数专门拿来构造一个对象的
+</code></pre><hr><div class="md-section-divider"></div><h3 data-anchor-id="1ppn" id="new">new？</h3><pre data-anchor-id="axe7"><code>专门用来运算函数的。
+用了new之后函数可以不用加（）就调用，new运算之后的()主要是用来传参的。
+var t1=new fn1();  //类的实例化过程，f1就是实例化对象
+</code></pre><div class="md-section-divider"></div><h3 data-anchor-id="7vuv" id="原型">原型？</h3><pre data-anchor-id="uc0y"><code>每一个js对象（除了null）都有另一个对象（原型）相关联。每一个对象都从原型继承属性。
+
+例如：Date.prototype的属性继承自object.prototype因此new Date()创建的Date对象的属性同时继承自Date.prototype和object.prototype。这一系列的原型对象就是所谓的“原型链”
+
+当一个函数被申明的时候，该函数下默认有一个属性：prototype，
+    （该属性的值是一个**对象**）当我们去调用一个对象的属性或者方法的时候，如果该对象自身没有该属性或方法，则会调用到该对象的*构造函数*下的prototype下面属性或方法.
+    prototype是给这个类的实例化对象使用的 （自身用不了）
+    必须要实例化对象
+</code></pre><div class="md-section-divider"></div><h4 data-anchor-id="qyoh" id="原型链proto">原型链（<em>proto</em>）？</h4><pre data-anchor-id="ir0j"><code>如果是对象就会先找链-&gt; -&gt; 构造函数的原型 -&gt;  构造函数的原型的链 -&gt; 对象的原型
+
+实例对象与原型之间的连接，叫做原型链
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="i71b" id="constructor查看构造函数">constructor?(查看构造函数)</h4><pre data-anchor-id="xhtp"><code>console.log(obj.constructor);
+可以手动constructor的指向;
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="u5eu" id="instanceof二元运算符">instanceof(二元运算符)</h4><pre data-anchor-id="yqs9"><code>运算检测一个函数的原型是否在要检测对象的原型链上
+例如：
+var arr=[]
+console.log(arr instanceof Array);  // true   
+* 只能检测对象，不能检测简单类型*
+</code></pre><div class="md-section-divider"></div><h4 data-anchor-id="vedl" id="包装对象">包装对象</h4><pre data-anchor-id="pg5a"><code>当简单类型（string,number,boolean）去查看某个属性方法的时候，系统就会偷偷的将这个简单的类型转成对象类型的对象，从这个对象去查找要查看的结果。之后这个包装的对象自动销毁。整个过程的就是简单类型也能查看属性和或者方法的原理
+
+简单类型的属性只能读，不能写；
+</code></pre><div class="md-section-divider"></div><h4 data-anchor-id="20a0" id="this的指向问题">this的指向问题</h4><pre data-anchor-id="omao"><code>1. 先分清楚this的属性的值是什么类型；
+2. 单纯的一个函数名＋()，   this-&gt; window;
+3.将一个函数交给事件调用，this-&gt;是触发事件这个对象（pc）;
+4.定时器里面中this，正常的情况下是指向window,如果是有主的调用情况下，就是主。
+setTimeout(new fn1,1000)  //this指向 obj
+5.一般有主的情况下，this就是主。（被定时器直接调用，那么this指向window）；
+6.new -&gt; 对象
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="dztl" id="继承">继承</h4><pre data-anchor-id="82xo"><code>在javasrcipt中，继承就是让一个对象拥有另一个对象的方法或属性；
+</code></pre><ol data-anchor-id="7is7">
+<li>属性继承 <br>
+<code>调用父类并且将父类的this修改成子类，这个时候子类就拥有父类的属性。（用call，或者apply方法）；</code></li>
+</ol><hr><p data-anchor-id="6p2r">2.方法继承</p><p data-anchor-id="nby8">方法1：（不适用，赋址）</p><pre data-anchor-id="lsiy"><code>例如：
+    父级的prototype=子级的prototype； //两个对象相等就是赋址，引用关系
+</code></pre><hr><p data-anchor-id="1ucf">方法2：拷贝继承（适用[耗性能]，赋值）</p><pre data-anchor-id="53cr"><code> 例如：
+        for(var attr in 子级.prototype){
+        //是它自己身的方法才继承
+            if(子级.prototype.hasOwnProperty(attr)){
+                父级.prototype[attr]=子级.prototype[attr];
+            }
+        }  
+        //通过for in遍历父级的原型上的方法，赋值给子级的原型，从而达到方法继承的目的
+</code></pre><hr><p data-anchor-id="12vg">方法3：类式方法继承</p><pre data-anchor-id="lz7a"><code>function odd(){};   //先创建一个新类
+odd.prototype=子级.prototype;
+var odd1=new odd;  //把之前的那个新类new成一个对象
+父级.prototype=odd1     
+</code></pre><hr><p data-anchor-id="uy3m">方法4：对象继承</p><pre data-anchor-id="8fra"><code>var obj = {
+        say:function(){
+            console.log(1)
+        },
+        running:function(){
+            console.log(2)
+        }
+    }
+//  var obj2 = obj;
+    paoh.prototype = obj;
+    function paoh(){}
+    var ph = new paoh;
+    obj2 = ph;
+    obj2.say = function(){
+        alert(1);
+    }
+
+    obj.say();
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="ocvy" id="tostring将某种数据类型转成字符串">toString（将某种数据类型转成字符串）</h4><pre data-anchor-id="bu0c"><code>内置的对象都有toString的方法
+*只要调用了alert，系统就会自动调用该数据类型的toString*
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="utb6" id="call">call</h1><pre data-anchor-id="nswy"><code>例如：
+
+function fn1(a,b){
+    alert(this);
+    alert(a+b)
+}
+fn1.call(document,5,3)  //有无数个参数，参数1:改变this的指向;参数2之后都是实参；
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="w5cf" id="apply">apply</h1><pre data-anchor-id="1uwo"><code>例如：
+    function fn1(a,b){
+        alert(this);
+        alert(a+b)
+    }
+
+
+  fn1.apply(document,[5,3])； //只有两个参数，参数1：改变this的指向，参数2 :[]  数组，实参的集合。
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="4vg9" id="for-in">for in</h1><p data-anchor-id="nfww">for(var atrr in obj){  //把这个属性名字赋值给变量atrr <br>
+    console.log(obj[attr]);    //输出每一个属性的值 <br>
+}</p><hr><div class="md-section-divider"></div><h1 data-anchor-id="e7lh" id="组件">组件</h1><pre data-anchor-id="76uy"><code>   1.提供了一个完善的功能的方法或数据的封装
+   2.易扩展，易维护
+   3.
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="vo6e" id="jquery">jQuery</h1><pre data-anchor-id="04vs"><code>jQuery能够让你在文档中轻松的找到关心的元素，并对这些元素进行操作：添加内容、编辑html属性和css属性、定义事件处理程序，以及执行动画。它还拥有Ajax来动态发起HTTP请求、以及一些通用的工具函数来操作对象和数组。
+
+
+
+1.js方法库，集成了许多解决问题的方法。
+    提供强大的选择器，简洁的API、优雅的链式、便捷的操作
+2.版本
+    1开头的，兼容低版本浏览器
+    2开头的，去掉了兼容的问题
+    3开头的，在2开头的基础上又加了些新的方法（也不兼容低版本）
+3.min.js压缩版本可以以直接开发
+4.www.jQuery123.com(中文的网址)
+5.$就是jQuery一个函数名
+    6." .css " 一个参数是获取，两个参数是设置，如果参数是对象的形式可以无限制设置。
+    7.$(function(){})  //readay事件
+8.$(obj)  可以把原生的对象转成jQ对象
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="duip" id="属性选择器">属性选择器</h4><pre data-anchor-id="rygg"><code>1.[name|="value"] 当有name属性=value,或者以value-开头的元素，不加"|" 那就是获取name="value" 属性
+2.[name*=value] 获取有name属性=所有包含value值的元素
+3.[name!=value] 排除value属性的元素，获取其他元素
+4.[name~=value] 获取带空格的value
+5.[name$=value] 获取value结尾的元素
+6.[name^=value] 获取vlaue开头的元素
+</code></pre><hr><div class="md-section-divider"></div><h4 data-anchor-id="ake6" id="伪类选择器">伪类选择器</h4><pre data-anchor-id="10t4"><code>1. $(input:checked)    找到input为选中的的元素
+    2. $(input:submit)    找到input为submit的元素
+3. $("li:odd")        找到奇数的元素（从0开始）
+    4. $("li:event")      找到偶数的元素
+5  $("li:first-child")   找到父元素中的第一个。
+    6  $("input:focus")   找到当前获得焦点的元素。
+7  li:gt(index)         找到大于索引的元素(index里面写数字)
+8  li:lt(index)         找到小于索引的元素
+</code></pre><hr><p data-anchor-id="j78e">事件</p><pre data-anchor-id="3r5q"><code>格式1：
+元素.不带on的事件名（function(){
+
+}）
+格式2：
+元素.on("不带on的事件名"，function(){
+
+})
+</code></pre><hr><div class="md-section-divider"></div><h3 data-anchor-id="pj2u" id="属性">属性</h3><pre data-anchor-id="h3ye"><code>例如
+$("#div1").attr("id");  //获取div1的id
+    $("#div1").attr("index,0");  //设置属性
+</code></pre><hr><div class="md-section-divider"></div><h3 data-anchor-id="tndf" id="节点">节点</h3><pre data-anchor-id="vgof"><code>fisrt()         //第一个元素
+last()          //最后一个元素
+slice(1,3)      //从第1位开始，3位结束。之间的元素不包括结束位
+.next()           //下个兄弟元素
+.prev()           //上一个兄弟元素
+.children（筛选)  //父级下的子元素。可以筛选标签，
+.find ()          //类似于TagName(找到某个元素下的指定元素)   如$ul.find(".li");  可以找子孙级
+    .parent()         //找父级元素后面加[0]找到的是原生
+    .parents(筛选)    //找所有的祖先节点
+    .closest();       //找的是最近的自身或者父级（唯一一个元素）
+    var $li=$("&lt;li&gt;")   //创建元素     li里面添加内容的话写一对
+    父级.append(子级)   //父级末尾添加元素，如果需要链式操作，this是父级
+    子级.appendTo(父级)   //父级后面添加元素
+    父级.prepend(子级)    //父级开头添加元素
+    子级.prependTo(父级)    //父级开头添加元素
+    $(添加到谁的前面).before(添加到谁)
+$(添加谁).insertBefore(添加到谁前面)
+    $(添加到谁的后面).after(添加到谁)
+$(添加谁).insertAfter(添加到谁的后面)
+    $(删除的对象).remove();
+$().clone(true)   // true克隆事件内容，false克隆内容
+.eq(下标)         找到对应下标的元素
+</code></pre><hr><div class="md-section-divider"></div><h3 data-anchor-id="pmzg" id="其他">其他</h3><pre data-anchor-id="nsbv"><code>.val()  //不写参数是获取，写参数是设置
+.text()   //与.html一样，只是不能写标签
+.prop()   //专门用来读写checked
+.html ()    //相当于innerHtml  可以加标签 
+.attr()    //属性 参数一个获取，两个设置 src,id……
+.index(参数指定范围)    //相当于i，默认index相对父级找到当前这个元素排第几位
+.addClass  //添加class
+.removeClass  //删除class
+.show()       //display:block
+.hide()       //display:none
+.siblings()   //其他的
+.size()      //等于length
+.hover(fn1，fn2)  //fn1:onmouseenter(移入),fn2:onmouseleave（移开）
+.wrap(参数)       //适用于查找替换，包装对象。参数写的是用什么包就用什么包
+.wrapAll ()    //全部一起包
+.wrapInner()  
+.width()    //（默认包括不包括padding和border） (参数里面可以传数值，设置)
+.innerWidth(width)   //元素外部宽度（默认包括padding不包括border）。（可见和隐藏元素均有效）
+outerWidth([options])  //元素外部宽度（默认包括padding和border）。（可见和隐藏元素均有效）。参数为 true 时，计算margin。
+
+.scrollTop([val])  //设定(获取)垂直滚动条值
+$(window)|$(document) 获取的时候都不加引号
+</code></pre><hr><div class="md-section-divider"></div><h1 data-anchor-id="thv0" id="js中容易忘掉的那点事">js中容易忘掉的那点事</h1><pre data-anchor-id="jj0t"><code>1.浮动，   IE下（styleFloat） 标准下（cssFloat）;
+2." . "  都是可以用[]来替代
+3.对象是[],{},fn。
+4.属性一定是在某个(非空) 对象上的。  null（空对象）   只有(非空)对象上才能加属性  [] {}；
+5.对象类型会引用一个内存地址，所以arr2会改变arr
+var arr=[1,2,3]
+var arr2=arr;
+arr2.push(4);
+arr2   //[1,2,3,4];
+arr   //[1,2,3,4];
+6.josn也是字符串类型     
+7.false也是0；false++；就等于1；
+8.new过之后就是一个对象
+9.函数会被事件调用，函数名+（）；定时器，匿名函数自执行，new,call,apply;
+10.简单类型相等是赋值，复杂类型是赋址。
+11.除了字符串，数字，ture,false,null,undefinde.其他的都是对象
+12.内置对象是由ECMA规范定义的对象和类。例如，数组，函数，日期和正则表达式都是内置的对象
+</code></pre><hr></div>
+</body>
+</html>
