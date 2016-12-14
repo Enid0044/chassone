@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        #wrap{
+            width:800px;
+            height:500px;
+            border:10px solid #ccc;
+            margin:30px auto;
+            /*overflow: hidden;*/
+
+        }
+        #list{
+            width:800%;
+            position: relative;
+            left:0;
+        }
+        #list li{
+            float:left;
+        }
+        </style>
+    </head>
+    <body>
+    <script src="jquery-3.1.1.min.js"></script>
+    <section id="wrap">
+       <ul id="list">
+            <li><img src="img/1.jpg"></li>
+            <li><img src="img/2.jpg"></li>
+            <li><img src="img/3.jpg"></li>
+            <li><img src="img/4.jpg"></li>
+            <li><img src="img/5.jpg"></li>
+            <li><img src="img/6.jpg"></li>
+        </ul>
+    </section>
+    </body>
+    <script>
+        (function(){
+            var Li=$("#list li:lt(2)").clone(true);  //把前面两个节点克隆到ul的后面
+            $("#list").append(Li);
+            var liW=$("li").width();  //获取li的width
+            var n=0;
+            $("#list").css("left",-(n+1)*liW);
+            left();
+            setInterval(left,1000);
+            function left(){
+                 if(n>=6){
+                    n=0;
+                    $("#list").css("left",-(n+1)*liW);
+                 }
+                 n++;
+                $("#list").animate({"left":-(n+1)*liW})
+            }
+
+        })()
+    </script>
+</html>
